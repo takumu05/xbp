@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <!-- ⑥↓タイトルを変えてみよう -->
+    <title>xbp第一回授業</title>
+    <!-- ⑤スタイルシートの設定をしよう -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- h1.htmlからある行をコピペしてくればOK -->
+</head>
+<body>
+    <h1>見出し</h1>
+    <!-- 塊ごとにdivタグで区切るようにしましょう。 -->
+    <div>
+         <!-- ①↓に文字を書いてみよう -->
+<div>これはテストです。
+    <br>aaaa
+    <br>難しい
+</div>
+         <!-- ②↓に画像（imagesフォルダにあるtest.png）を挿入してみよう -->
+         <img src="./images/testimage.png" width="30%"><br>
+         <img src="../images/0_XBlogo.png"><br>
+         <img src="../digi_fab/images/0_XBlogo.png"
+         <!-- ③↓に箇条書きをしてみよう -->
+         <ol><li>aaaaaaaa</li><li>iiiiiiiii</li></ol>
+         <ul><li>uuuuuuuuu</li><li>eeeeeeee</li></ul>
+
+         <!-- ④↓に外部リンクを作ってみよう -->
+         <a href="./index.html">デザイン演習Ⅰ・Ⅱトップページ</a><br>
+         <a href="../index.html">XBPトップページ</a><br>
+         <a href="https://www.yahoo.co.jp/" target="_blank">Yahoo</a><br>
+         <a href="./files/test.pdf" target="_blank">pdfファイル</a>
+         <div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/ZZDJBEdsoAE?si=4kfNJ6zA_i3sTPwi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
+        引用 マリマリマリー誘拐した子供が反抗期だったやつ</div>
+
+    </div>
+
+</body>
+</html>

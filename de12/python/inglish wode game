@@ -1,0 +1,20 @@
+import random
+def english_word_game():
+    # 英単語リストを用意する（例）
+    english_words = ["apple", "banana", "cherry", "dog", "elephant"]
+    
+    # ランダムに英単語を選ぶ
+    random_word = random.choice(english_words)
+    
+    # プレーヤーに単語を提示し、正解を入力させる
+    user_guess = input(f"次の単語を入力してください: {random_word[0]}{'*'*(len(random_word)-2)}{random_word[-1]} ").strip().lower()
+    
+    # プレーヤーの入力と正解し、結果を表示する
+    if user_guess == random_word:
+        print("正解です！")
+        print("おめでとう！志望校に受かった！")
+    else:
+        print(f"不正解です。正解は {random_word} でした。")
+        print("英語のテストの点数が足りなく、志望校に落ちてしまった。")
+        print("ゲームオーバー!やる気がなくなりニートになりました")
+        return

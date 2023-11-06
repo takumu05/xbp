@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <title>デザイン演習5</title>
+    <link rel="stylesheet" href="./css/2style.css">
+</head>
+    <style>
+        body {background-color: rgb(242, 245, 247);
+
+             
+        }
+    </style>
+<body>
+    <div style="text-align: center">
+       <h1>第5回デザイン演習 アプリ作成 </h1></div><br>
+
+<div>
+    <div>
+        <h2>旅行プランを簡単に作れるアプリを作ろう！</h2>
+        <h3>【ストーリーボード】</h3>
+    <div class="container">
+    <img src="../images/アプリ作成.jpg" alt="50%"></p>
+    <br>私たちの班では簡単に旅行プランが建てられることがあできればいいねということで今回旅行プランアプリを作ることにしました。
+    ストーリーボードにある通りPinterestで写真検索をしインスタグラムで近くのおすすめスポットを提案、そして先ほどのおすすめスポット
+    目的地とし、宿を決める。目的地や宿までの経路をyahoo japanをで提案する。という形で作ろうということで、僕は宿検索を担当することになった。
+    </div> 
+    </div> 
+    <div>
+        <h2>【ソースコード】</h2>
+        <pre><code>
+            import japanize_kivy
+            import urllib.parse
+            import kivy
+            from kivy.app import App
+            from kivy.uix.boxlayout import BoxLayout
+            from kivy.uix.textinput import TextInput
+            from kivy.uix.button import Button
+            import webbrowser
+            
+            kivy.require('1.11.1')
+            
+            class HotelSearchApp(App):
+                def __init__(self, **kwargs):
+                    super().__init__(**kwargs)
+            
+                def build(self):
+                    self.layout = BoxLayout(orientation='vertical')
+                    self.location_input = TextInput(hint_text='目的地を入力してください')
+                    self.check_in_input = TextInput(hint_text='チェックイン日（例: 2023-11-04）')
+                    self.check_out_input = TextInput(hint_text='チェックアウト日（例: 2023-11-07）')
+                    self.guests_input = TextInput(hint_text='宿泊人数')
+                    self.rooms_input = TextInput(hint_text='部屋数')
+                    self.search_button = Button(text='検索')
+                    self.search_button.bind(on_press=self.search_hotels)
+            
+                    self.layout.add_widget(self.location_input)
+                    self.layout.add_widget(self.check_in_input)
+                    self.layout.add_widget(self.check_out_input)
+                    self.layout.add_widget(self.guests_input)
+                    self.layout.add_widget(self.rooms_input)
+                    self.layout.add_widget(self.search_button)
+            
+                    return self.layout
+            
+                def search_hotels(self, instance):
+                    location = self.location_input.text.strip()
+                    check_in_date = self.check_in_input.text.strip()
+                    check_out_date = self.check_out_input.text.strip()
+                    guests = self.guests_input.text.strip()
+                    rooms = self.rooms_input.text.strip()
+            
+                    if location and check_in_date and check_out_date:
+                        # 実際の宿泊サイトのURLに合わせて調整
+                        # 以下はBooking.comの例
+                        base_url = 'https://www.booking.com/search.html'
+                        query_parameters = {
+                            'ss': location,
+                            'checkin_monthday': check_in_date.split('-')[2],
+                            'checkin_year_month': f'{check_in_date.split("-")[0]}-{check_in_date.split("-")[1]}',
+                            'checkout_monthday': check_out_date.split('-')[2],
+                            'checkout_year_month': f'{check_out_date.split("-")[0]}-{check_out_date.split("-")[1]}',
+                            'group_adults': guests,
+                            'no_rooms': rooms,
+                        }
+                        query_string = urllib.parse.urlencode(query_parameters)
+                        search_url = f'{base_url}?{query_string}'
+                        webbrowser.open(search_url)
+            
+            if __name__ == '__main__':
+                app = HotelSearchApp()
+                app.run() 
+        </code></pre>       
+    </div>
+    <div>
+        <h2>【利用手順】</h2>
+        <ol>
+        <li>アプリを起動</li>
+        <li>目的地、チェックイン日、チェックアウト日、宿泊人数、部屋数を入力する</li>
+        <li>サイトに飛び、宿を確認する。</li>
+        </ol>
+        <h2>【反省点】</h2>
+        <ul>
+        <li>みんなそれぞれ作ったものの、つなげ方がわからなかった。</li>
+        <li>GPIの申請を自分ではできなく、班の方に任せてしまった。</li>
+        <li>レイアウトがつまらなく、色実をつける必要がある。</li>
+        </ul>
+        <h2>感想</h2>
+        全員が作ったものをつなげて、アプリを完成させられるように、これから進めていきたい
+        
+        
+
+    
+        <br>
+
+
+
+    </div>
+
+</body>
+</html>

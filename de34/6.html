@@ -21,7 +21,7 @@
         <h3>5月27日 企画案</h3>
        <p> 今回、私たちの班では、紫外線が肌や健康に与える影響をリアルタイムで把握し、
         安全対策を講じるため、UV指数を簡単に確認できるスマホアプリを作ろうと考えています。</p>
-        <img src="../images/最終課題企画案.JPG" width="60%">
+        <img src="../images/最終課題企画案.JPG" width="40%">
        <p> 現状考えている案は、UVセンサーのデータをWi-Fi経由で送信し、アプリでそのデータをリアルタイムに表示することができます。
         これにより、UV指数を簡単に確認することが可能となります</p>
     </div>
@@ -42,24 +42,29 @@
         <h3>6月10日 センサー接続</h3>
         <p>今回はUVセンサーが届いたので、早速接続しようと思う。</p>
         <br><b>【GUVA-S12SD アナログ紫外線センサー1918】</b><br>
-        <img src="../images/GUVA 紫外線センサー.jpg" width="50%">
+        <img src="../images/GUVA 紫外線センサー.jpg" width="30%">
         <br><b>【ESP32開発ボード Wi-Fi + BLEモジュール ESP-WROOM-32】</b><br>
-        <img src="../images/Wi-Fiモジュール.png" width="50%">
+        <img src="../images/Wi-Fiモジュール.png" width="30%">
         <h4>1.UVセンサーの接続</h4>
         <li>UVセンサーのVCC（＋）をESP32の3.3Vピンに接続</li>
         <li>UVセンサーのGND（－）をESP32のGNDピンに接続</li>
         <li>UVセンサーのアナログ出力（OUT）をESP32のアナログ入力ピン(GPIO34)に接続</li> 
-        <img src="../images/Wi-Fiモジュール表.png" width="50%"><br>
+        <img src="../images/Wi-Fiモジュール表.png" width="30%"><br>
         <h4>2.Arduino IDEの接続</h4>
         ここはファブラボの方がしてくれたのでいまいちよくわかってないが、デバイスマネージャーから
-        ESP32のボードマネージャを追加するためCP210X Universal Windows Driver」を追加する必要があるらしい。ここら辺はよくわからない<br>
+        ESP32のボードマネージャを追加するため<b>CP210x Universal Windows Driver</b>を追加する必要があるらしい。ここら辺はよくわからない<br>
         今日はここらへんで終了した。Arduinoがエラーを起こしてしまっていたので、次回はこのエラーを改善していきたい
     </div>
     <div>
         <h3>6月17日 センサー接続②</h3>
-        今回は前回の続きです。<br>
-        <img src="" alt="">
-
+        今回は前回の続きです。前回はジャンパーワイヤーをはんだ付けしていたが、これはあまりよくないらしいので<mark><b>ブレッドボード</b></mark>を使うようにした。
+        また、しっかりセンサーが反応してくれているのか確認するため<mark><b>Lチカ</b></mark>してみた。<br><br>
+        <img src="../images/センサー接続１.JPG" width="30%">
+        <br>うまくいっているので今度はセンサーとモジュールを接続していこうと思う。<br><br>
+        <img src="../images/センサーとモジュール接続.JPG" width="30%">
+        <br>こんな感じに接続したが、Arduinoはエラーを起こしてしまった。原因はリセットボタンを押してしまっていたためだった。押さないでやってみると、エラーが起きずにモニターに反映した。<br>
+        <div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/OKVOzPFpgFc?si=maR2cMkDgd6Vg6xq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <br>エラーは起きなかったものの、モニターに出される数値が4950で一番高い数値か0で一番低い数値しか出ない。たまに、200とかなる。次回はここを改善していきたい。
 
 
 

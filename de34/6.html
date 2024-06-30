@@ -65,6 +65,42 @@
         <br>こんな感じに接続したが、Arduinoはエラーを起こしてしまった。原因はリセットボタンを押してしまっていたためだった。押さないでやってみると、エラーが起きずにモニターに反映した。<br>
         <div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/OKVOzPFpgFc?si=maR2cMkDgd6Vg6xq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         <br>エラーは起きなかったものの、モニターに出される数値が4950で一番高い数値か0で一番低い数値しか出ない。たまに、200とかなる。次回はここを改善していきたい。
+    </div>    
+    <div>
+        <h3>6月24日 モニター</h3>
+        今回も前回の続きです。
+        センサーの数値から危険度が分かるようにしてみました。
+    <pre><code>
+        int sensorPin = A0; // UVセンサーが接続されているアナログピン
+        float calibrationFactor = 307.0; // キャリブレーション係数（センサーの特性に基づく）
+        
+        void setup() {
+          Serial.begin(115200); // シリアル通信の初期化
+        }
+        
+        void loop() {
+          int sensorValue = analogRead(sensorPin); // センサー値の読み取り
+          float voltage = sensorValue * (3.3 / 4095.0); // センサー値を電圧に変換（ESP32のADCリファレンス電圧が3.3Vの場合）
+          float uvIntensity = voltage * calibrationFactor; // 電圧をUV強度に変換
+          float uvIndex = uvIntensity * 0.1; // UV強度をUVインデックスに変換
+        
+          Serial.print("Voltage: ");
+          Serial.print(voltage);
+          Serial.print(" V, UV Intensity: ");
+          Serial.print(uvIntensity);
+          Serial.print(" mW/cm^2, UV Index: ");
+          Serial.println(uvIndex);
+        
+          delay(1000); // 1秒待機
+        }
+            
+    </code></pre>  
+        正直、センサーで読み取ってモニターに出される数値が、0ばかりで0以外の数字が出ても毎回バラバラのため、基準がわからない。
+        どこからが安全で、どこからが危ないのかわからない。センサーの性能の問題の可能性もあるし、コードが問題なのかもしれない。
+        次回はそこを明らかにしていきたい。
+
+
+    </div>
 
 
 

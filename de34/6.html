@@ -98,8 +98,67 @@
         正直、センサーで読み取ってモニターに出される数値が、0ばかりで0以外の数字が出ても毎回バラバラのため、基準がわからない。
         どこからが安全で、どこからが危ないのかわからない。センサーの性能の問題の可能性もあるし、コードが問題なのかもしれない。
         次回はそこを明らかにしていきたい。
+    </div>
+    <div>
+        <h3>7月1日 モニター</h3>
+        今回も前回の続きです。
+        正しい数値が反映されません。センサー自体の問題かも・・・
+    </div>
+    <div>
+        <h3>7月8日 モニター</h3>
+        正しい数値が出ないのでもう、諦めました。なので<mark><b>dfLink</b></mark>で見れるようにしました。
+        <pre><code>
+            #include <WiFi.h>
+                #include <dfLink.h>
+                
+                const char* ssid     = "zikkenndayo"; // 繋げたいネットワーク
+                const char* password = "zikkenndayo";  // 繋げたいネットワークのパスワード
+                String pkey = "XRxZkHGZ5LrD7BjxakKL";         // 端末ID
+                
+                const int uvSensorPin = 34; // UVセンサーのアナログ出力を接続したピン（ESP32のアナログピンを使用）
+                // dfLinkインスタンス化 --> conn1とよぶ
+                dfLink conn1(pkey);
+                
+                void setup() {
+                    Serial.begin(74880); // esp32は74880
+                    WiFi.begin(ssid, password);
+                    Serial.println("WiFi connecting");
+                    while ((!(WiFi.status() == WL_CONNECTED))){
+                        delay(300);
+                        Serial.print(".");
+                    }
+                    Serial.begin(74880); // シリアル通信を115200ボーで開始
+                    delay(10);
+                    Serial.println("");
+                    Serial.println("WiFi connected");
+                    // Serial.println("IP address: ");
+                }
+                
+                void loop() {
+                    int sensorValue = analogRead(uvSensorPin);
+                    Serial.println(sensorValue);
 
-
+                        int idata = sensorValue;
+                        float fdata = 0.0;
+                        String tdata = "";
+                        String ret = conn1.send_data(String(idata), String(fdata), tdata);
+                
+                        Serial.println(ret);
+                     }
+                    delay(1000);
+                
+                
+        </code></pre>
+        <img src="../images/gurahu.png" width="50%">
+        <div class="video"><iframe width="417" height="742" src="https://www.youtube.com/embed/JFAZ_FBTtoY" title="UVセンサー数値" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <br>一番最初は0の数値も出るようにしてたが、あまりに0の数値が出るので0が出ないように<br>
+        <code>if (sensorValue != 0) { // センサー値が0でない場合にのみデータを送信}</code>このコードを追加した
+        <div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/AYO1eBW98B4?si=HpMzWdqeN4wpqW9B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <br>センサーとモジュールをいれる箱を制作した
+        <br><img src="../images/UVsenser box.PNG" width="50%">
+    </div>
+    <div>
+        <h3>7月15日 動画制作</h3>
     </div>
 
 

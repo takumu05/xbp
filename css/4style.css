@@ -2,65 +2,110 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:400,700&display=swap&subset=japanese');
 
-/* ロゴ画像スタイル */
-logotohome img {
-    border-radius: 70%;
-    width: 70px;
-    height: 70px;
-    object-fit: cover; /* 画像のトリミング */
-}
-
-/* ========== common ========== */
+/* ベーススタイル */
 html, body {
     font-size: 16px;
-    font-family: sans-serif;
+    font-family: 'Raleway', sans-serif;
     color: #393939;
-    margin-left: 15px;
-    margin-bottom: 40px;
-    background: #efefef;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f9;
 }
 
 h1 {
-    text-indent: 0em;
+    font-size: 2.5em;
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
 }
 
 h2 {
-    margin-left: 1em;
-    margin-top: 1em;
+    font-size: 2em;
+    text-align: center;
+    margin-top: 10px;
+    color: #555;
 }
 
-h3 {
-    margin-left: 2em;
+.logotohome {
+    text-align: left;
+    margin: 20px 5%; /* 上下左右のマージンを設定 */
 }
 
-div {
-    margin-top: 1em;
-    margin-left: 3em;
+.logotohome img {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
 }
 
-p {
-    margin-left: 3em;
+/* ギャラリーコンテナ */
+.gallery-container {
+    overflow: auto; /* 横と縦の両方向にスクロールを許可 */
+    padding: 0 2%; /* 左右にパディングを追加（左寄りに調整） */
+    margin: 0; /* マージンをリセット */
+    max-height: 500px; /* 高さを制限して縦スクロールを有効にする */
+    display: flex; /* ギャラリーコンテナをフレックスボックスに */
+    align-items: center; /* アイテムを中央に揃える */
+    background: #fff; /* 背景を白に設定 */
 }
 
-span.blackback {
-    text-indent: 3em;
-    background: #393939;
-    color: #efefef;
-}
-
-/* 画像を横並びにするためのコンテナ */
+/* タイトルと写真を横に並べるための設定 */
 .row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; /* 画像を均等に配置 */
+    display: flex; /* 横に並べるためにフレックスボックスを使用 */
+    align-items: center; /* アイテムを中央に揃える */
+    background: #fff; /* 背景を白に設定 */
+    padding: 10px; /* 内部パディングを追加（調整可能） */
 }
 
+/* タイトル部分のスタイル */
+.XBPclass {
+    font-size: 2em; /* テキストサイズを調整 */
+    font-weight: bold;
+    color: #393939;
+    margin: 0 20px; /* 右側にマージンを追加して写真と離れるようにする */
+    padding: 0; /* パディングをリセット */
+    display: flex; /* フレックスボックスで配置 */
+    align-items: center; /* 縦方向に中央揃え */
+    justify-content: center; /* 横方向に中央揃え */
+    border-right: 3px solid #393939; /* 縦線を追加 */
+    height: 7cm; /* 縦線の高さを7センチに設定 */
+    box-sizing: border-box; /* ボックスサイズを調整 */
+    text-align: center; /* テキストを中央に寄せる */
+    line-height: 1; /* 行間を調整 */
+}
+
+/* 写真部分のスタイル */
 .col-3 {
-    flex: 0 0 calc(25% - 10px); /* 各列の幅を25%に設定し、間隔を考慮 */
-    margin: 5px; /* 画像間の隙間 */
+    flex: 0 0 auto; /* 要素の幅を自動調整する */
+    width: 20%; /* 各アイテムの幅を設定（4アイテム並べるために20%に変更） */
+    box-sizing: border-box; /* パディングやボーダーのサイズを含める */
+    text-align: center;
+    background: #fff;
+    padding: 20px; /* 写真間のスペースを増やすためのパディング */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 15px; /* 写真同士のスペースを設定 */
+}
+
+.col-3:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .col-3 img {
-    width: 100%;
-    object-fit: cover; /* 画像のトリミング */
+    width: auto;
+    height: 7cm; /* 写真の高さを7センチに設定 */
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.col-3 dt {
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #393939;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
 }

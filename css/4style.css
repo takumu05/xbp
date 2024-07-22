@@ -1,58 +1,66 @@
-@charset "utf-8";
-/* 冒頭でimport */
+/* フォントのインポート */
 @import url('https://fonts.googleapis.com/css?family=Raleway:700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:400,700&display=swap&subset=japanese');
-/* フォントを指定したいところで */
 
-logo img{
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    object-fit: cover; /* 画像のトリミング */
-}
-
-logotohome img{
+/* ロゴ画像スタイル */
+logotohome img {
     border-radius: 70%;
     width: 70px;
     height: 70px;
     object-fit: cover; /* 画像のトリミング */
 }
 
-
-
 /* ========== common ========== */
 html, body {
-	font-size: 16px;
-	font-family: sans-serif;
-	color: #393939;
+    font-size: 16px;
+    font-family: sans-serif;
+    color: #393939;
     margin-left: 15px;
     margin-bottom: 40px;
-	background: #efefef;
+    background: #efefef;
 }
-h1{
+
+h1 {
     text-indent: 0em;
 }
-h2{
+
+h2 {
     margin-left: 1em;
     margin-top: 1em;
 }
-h3{
+
+h3 {
     margin-left: 2em;
 }
-div{
+
+div {
     margin-top: 1em;
     margin-left: 3em;
 }
-p{
+
+p {
     margin-left: 3em;
 }
-span.blackback{
+
+span.blackback {
     text-indent: 3em;
     background: #393939;
     color: #efefef;
 }
-dt {
-    display: block;
-    unicode-bidi: isolate;
+
+/* 画像を横並びにするためのコンテナ */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* 画像を均等に配置 */
 }
 
+.col-3 {
+    flex: 0 0 calc(25% - 10px); /* 各列の幅を25%に設定し、間隔を考慮 */
+    margin: 5px; /* 画像間の隙間 */
+}
+
+.col-3 img {
+    width: 100%;
+    object-fit: cover; /* 画像のトリミング */
+}

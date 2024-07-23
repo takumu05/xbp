@@ -12,12 +12,6 @@ html, body {
     background: #f4f4f9;
 }
 
-h1 {
-    font-size: 2.5em;
-    text-align: center;
-    margin-top: 20px;
-    color: #333;
-}
 
 h2 {
     font-size: 2em;
@@ -109,3 +103,56 @@ h2 {
     margin-top: 10px;
     border-radius: 5px;
 }
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em; /* サイズを調整 */
+    text-align: center; /* 中央揃えにする場合 */
+    color: #ffffff; /* 必要に応じて色を設定 */
+    margin: 20px 0; /* 上下のマージンを調整 */
+    margin-bottom: 0; /* h1の下部マージンを削除 */
+    line-height: 1; /* 行間を狭く設定（必要に応じて調整） */
+}
+
+.subtitle {
+    display: block; /* ブロック要素にして、h1の下に配置 */
+    font-size: 1.2em; /* フォントサイズの調整 */
+    color: #ffffff; /* テキストカラーの設定 */
+    text-align: center; /* 中央揃え */
+    margin-top: 0px; /* h1との間に余白を追加 */
+    margin-bottom: 10px; /* 下部のマージンを設定 */
+}
+#header {
+    position: relative;
+    height: 300px; /* 適切な高さを設定してください */
+    text-align: center; /* 中央揃え */
+    overflow: hidden;
+    padding-top: 40px; /* ロゴが上部に配置されるようにスペースを確保 */
+  }
+  
+  
+  .background-image {
+    background-image: url('../images/浜辺.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  #slogan {
+    color: white; /* テキストの色を白にする例。背景によって変更してください */
+    text-align: center;
+    padding: 20px;
+    position: relative;
+  }
+  .header.img {
+    position: absolute;
+    top: 10px; /* 上からの距離 */
+    left: 10px; /* 左からの距離 */
+    z-index: 1; /* ロゴが他の要素より上に表示されるようにします */
+  }

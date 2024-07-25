@@ -1,0 +1,200 @@
+/* フォントのインポート */
+@import url('https://fonts.googleapis.com/css?family=Raleway:700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:400,700&display=swap&subset=japanese');
+
+/* ベーススタイル */
+html, body {
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    color: #393939;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f9;
+}
+
+h2 {
+    font-size: 2em;
+    text-align: center;
+    margin-top: 10px;
+    color: #555;
+}
+
+.logotohome {
+    text-align: left;
+    margin: 20px 5%;
+}
+
+.logotohome img {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+}
+
+.gallery-container {
+    overflow: auto;
+    padding: 0 2%;
+    margin: 0;
+    max-height: 500px;
+    display: flex;
+    align-items: center;
+    background: #fff;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 10px;
+}
+
+.XBPclass {
+    font-size: 2em;
+    font-weight: bold;
+    color: #393939;
+    margin: 0 20px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 3px solid #393939;
+    height: 7cm;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 1;
+}
+
+.col-3 {
+    flex: 0 0 auto;
+    width: 20%;
+    box-sizing: border-box;
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 15px;
+}
+
+.col-3:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.col-3 img {
+    width: auto;
+    height: 7cm;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.col-3 dt {
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #393939;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+    text-align: center;
+    color: #ffffff;
+    margin: 20px 0;
+    margin-bottom: 0;
+    line-height: 1;
+}
+
+.subtitle {
+    display: block;
+    font-size: 1.2em;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+#header {
+    position: relative;
+    height: 300px;
+    text-align: center;
+    overflow: hidden;
+    padding-top: 40px;
+}
+
+.background-image {
+    background-image: url('../images/デジファブ背景.JPG');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#slogan {
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.header.img {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+}
+.centered-list {
+    text-align: center;
+}
+
+.centered-list li {
+    display: inline-block;
+    margin: 0 60px;
+}
+.centered-list li {
+    display: inline-block;
+    margin: 10px; /* 各アイテムの間隔を広げる */
+    padding: 10px; /* アイテム内のパディングを追加 */
+    border: 1px solid #393939; /* 枠線を追加 */
+    border-radius: 10px; /* 角を丸くする */
+    background-color: #fff; /* 背景色を白にする */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* シャドウを追加 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* トランジションを追加 */
+}
+
+.centered-list li:hover {
+    transform: translateY(-5px); /* ホバー時のエフェクト */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* ホバー時のシャドウ */
+}
+
+.centered-list a {
+    text-decoration: none; /* リンクの下線を削除 */
+    color: #393939; /* リンクの色を設定 */
+    font-weight: bold; /* フォントの太さを設定 */
+}
+.box2 {
+    padding: 0.5em 1em;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-left: 500px; /* スペースを調整 */
+    margin-right: 500px;
+    font-weight: bold;
+    color: #6091d3;/*文字色*/
+    background: #FFF;
+    border: solid 3px #6091d3;/*線*/
+    border-radius: 10px;/*角の丸み*/
+}
+.box2 p {
+    margin: 0; 
+    padding: 0;
+}

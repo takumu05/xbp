@@ -186,8 +186,8 @@ h1 {
     padding: 0.5em 1em;
     margin-top: 10px;
     margin-bottom: 0px;
-    margin-left: 500px; /* スペースを調整 */
-    margin-right: 500px;
+    margin-left: 35%; /* スペースを調整 */
+    margin-right: 35%;
     font-weight: bold;
     color: #6091d3;/*文字色*/
     background: #FFF;
@@ -198,10 +198,3 @@ h1 {
     margin: 0; 
     padding: 0;
 }
-/* 小さい画面用のスタイル */
-@media screen and (max-width: 768px) {
-    #box {
-      margin-left: 20px; /* モバイル用のスペース */
-      margin-right: 20px; /* モバイル用のスペース */
-    }
-  }

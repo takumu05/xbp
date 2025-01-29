@@ -68,8 +68,20 @@ h1 {
     text-decoration: underline; 
 }
 
-.style
-iframe[src$=".pdf"]{
-    width:100%;
-    height:80vh;
+.pdf-container {
+    width: 100%;  /* 画面幅いっぱいに */
+    display: flex;
+    justify-content: center; /* 中央配置 */
+    align-items: center;
+    padding: 20px; /* 余白を追加 */
 }
+
+.pdf-viewer {
+    width: 90%;  /* 幅を90%に拡大 */
+    height: 100vh; /* ビューポートの80%の高さ */
+    max-width: 1200px; /* 最大幅を設定 */
+    max-height: 900px; /* 最大高さを設定 */
+    border: none; /* 枠線をなくす */
+}
+
+

@@ -1,0 +1,87 @@
+@charset "utf-8";
+/* 冒頭でimport */
+@import url('https://fonts.googleapis.com/css?family=Raleway:700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:400,700&display=swap&subset=japanese');
+/* フォントを指定したいところで */
+
+logo img{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover; /* 画像のトリミング */
+}
+
+logotohome img{
+    border-radius: 70%;
+    width: 70px;
+    height: 70px;
+    object-fit: cover; /* 画像のトリミング */
+}
+
+
+
+/* ========== common ========== */
+html, body {
+	font-size: 16px;
+	font-family: sans-serif;
+	color: #393939;
+    margin-left: 15px;
+    margin-bottom: 40px;
+	background: #efefef;
+}
+
+h3{
+    margin-left: 2em;
+}
+div{
+    margin-top: 1em;
+    margin-left: 3em;
+}
+p{
+    margin-left: 3em;
+}
+span.blackback{
+    text-indent: 3em;
+    background: #393939;
+    color: #efefef;
+
+}
+h2{ 
+    color: #000000;
+}
+h1 {
+    color: #364e96;
+    padding: 0.5em 0;
+    border-top: 3px solid #364e96;
+    border-bottom: 3px solid #364e96;
+}
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.text {
+    margin-left: 10px; /* テキストと写真の間隔を調整 */
+}
+
+.underlined-text {
+    text-decoration: underline; 
+}
+
+.pdf-container {
+    width: 100%;  /* 画面幅いっぱいに */
+    display: flex;
+    justify-content: center; /* 中央配置 */
+    align-items: center;
+    padding: 20px; /* 余白を追加 */
+}
+
+.pdf-viewer {
+    width: 90%;  /* 幅を90%に拡大 */
+    height: 100vh; /* ビューポートの80%の高さ */
+    max-width: 1200px; /* 最大幅を設定 */
+    max-height: 900px; /* 最大高さを設定 */
+    border: none; /* 枠線をなくす */
+}
+
+

@@ -1,0 +1,64 @@
+/* フォントのインポート */
+@import url('https://fonts.googleapis.com/css?family=Raleway:700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:400,700&display=swap&subset=japanese');
+
+/* ベーススタイル */
+/* ベース設定 */
+.logo {
+  height: 60px;
+  width: 60px; /* 正方形にする */
+  border-radius: 50%; /* 丸くする */
+  object-fit: cover;  /* 画像が潰れないように */
+}
+
+
+.logo-link {
+  display: inline-block;
+  text-decoration: none; /* リンクの下線を消す */
+}
+
+/* 日付 カレンダー風 */
+.hyphen {
+	display: none;
+}
+.date a {
+	text-decoration: none;
+}
+.entry-header .date {
+	position: absolute;
+	top: 5px;
+	left: -90px;
+	width: 75px;
+	height: 60px;
+	padding: 0;
+	border: none;
+	border-radius: 4px;
+	background: url(https://cdn-ak.f.st-hatena.com/images/fotolife/s/syofuso/20170130/20170130143332.png?1485754436) repeat-x;
+	color: #47a89c;
+	text-align: center;
+	line-height: 20px;
+	font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	box-shadow: 0 2px 3px rgba(0,0,0,0.15);
+	font-weight: normal;
+}
+.date-year::after {
+	content: "-";
+}
+.date-month::after {
+	content: none;
+}
+.date-year, .date-month {
+	display: inline;
+	color: #fff;
+	font-size: 12px;
+	font-weight: normal;
+}
+ .date-day {
+	display: block;
+	font-weight: bold;
+	font-size: 28px;
+	line-height: 40px;
+        color: #47a89c;
+}
+

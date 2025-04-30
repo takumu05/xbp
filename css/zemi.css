@@ -6,18 +6,12 @@
 html, body {
     font-size: 16px;
     font-family: 'Raleway', sans-serif;
-    color: #393939;
+    color: #ffffff;
     margin: 0;
     padding: 0;
-    background: #f4f4f9;
+    background: #ffffff;
 }
 
-h2 {
-    font-size: 2em;
-    text-align: center;
-    margin-top: 10px;
-    color: #555;
-}
 
 .logotohome {
     text-align: left;
@@ -41,12 +35,6 @@ h2 {
     background: #fff;
 }
 
-.row {
-    display: flex;
-    align-items: center;
-    background: #fff;
-    padding: 10px;
-}
 
 .XBPclass {
     font-size: 2em;
@@ -64,49 +52,24 @@ h2 {
     line-height: 1;
 }
 
-.col-3 {
-    flex: 0 0 auto;
-    width: 20%;
-    box-sizing: border-box;
-    text-align: center;
-    background: #fff;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 0 15px;
-}
-
-.col-3:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.col-3 img {
-    width: auto;
-    height: 7cm;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.col-3 dt {
-    font-size: 1em;
-    font-weight: bold;
-    color: #fff;
-    background-color: #393939;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 5px;
-}
 
 h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 3em;
+    font-size: 100px;
     text-align: center;
     color: #ffffff;
     margin: 20px 0;
     margin-bottom: 0;
     line-height: 1;
+}
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 50px;
+  text-align: center;
+  color: #000000;
+  margin: 20px 0;
+  margin-bottom: 0;
+  line-height: 1;
 }
 
 
@@ -132,12 +95,6 @@ h1 {
 }
 
 
-#slogan {
-    color: white;
-    text-align: center;
-    padding: 20px;
-    position: relative;
-}
 
 .header.img {
     position: absolute;
@@ -183,7 +140,7 @@ h1 {
     font-weight: bold;
     color: #6091d3;/*文字色*/
     background: #FFF;
-    border: solid 3px #6091d3;/*線*/
+    border: solid 3px #b5d4fd;/*線*/
     border-radius: 10px;/*角の丸み*/
 }
 .box2 p {
@@ -263,18 +220,44 @@ h1 {
   /* margin-top: auto を使う方法もある（flexboxの場合）&#8203;:contentReference[oaicite:2]{index=2} */
   /* ここではjustify-content: space-betweenで既に上下に配置 */
 }
-.section-title {
-  font-size: 3em;
-  text-align: center;
-  margin-top: 60px;
-  margin-bottom: 20px;
-  color: #333;
-  font-family: 'Raleway', sans-serif;
+.container {
+  margin: 50px;
 }
 
-.section-divider {
-  width: 60%;  /* 区切り線の長さ */
-  margin: 0 auto;  /* 中央揃え */
-  border: 1px solid #333;  /* 区切り線の色 */
-  margin-top: 20px;
+.top {
+  background-color: lightblue;
+  height: 100px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
 }
+
+.target {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s, transform 1s;
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  min-height: 200px;
+}
+
+.target.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-in {
+  opacity: 0;
+  transform: translateX(-50px); /* 左からスライド */
+  transition: all 0.6s ease-out;
+}
+
+.slide-in.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+

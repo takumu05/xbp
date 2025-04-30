@@ -36,18 +36,60 @@
     </div>    
   </div>
 
-  <div>
-    <h1 class="section-title">Project</h1>
-    <hr class="section-divider">  <!-- 区切り線の追加 -->
-    <ul class="centered-list">
-      <h2>鎌倉共創プロジェクト</h2>
-      <div class="box2"></div>
-  
-      <h2>横浜サーキュラープロジェクト</h2>
-      <div class="box2"></div>
-    </ul>  
+  <div class="container top">
+    <h1 class="slide-in">PROJECT</h1>
+
   </div>
+  <div class="container">
+    <li><a href="../doyolab/1.html">
+        <div class="target">
+        <h2 class="slide-in">鎌倉共創プロジェクト </h2>
+        </div>
+    </a></li>
+    
+    <div class="target">
+    <h2 class="slide-in">横浜サーキュラープロジェクト</h2>
+    </div>
+    
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const targets = document.querySelectorAll(".target");
   
-</div>
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.1
+    };
+  
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+  
+    targets.forEach((target) => {
+      observer.observe(target);
+    });
+  });
+</script>
+<script>
+    window.addEventListener('scroll', function () {
+      const elements = document.querySelectorAll('.slide-in');
+  
+      elements.forEach(function (el) {
+        const elementTop = el.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+  
+        if (elementTop < windowHeight - 100) {
+          el.classList.add('active');
+        }
+      });
+    });
+  </script>
+  
+  
 </body>
 </html>

@@ -71,7 +71,8 @@ h2 {
 /* 写真部分のスタイル */
 .col-3 {
     flex: 0 0 auto; /* 要素の幅を自動調整する */
-    width: 20%; /* 各アイテムの幅を設定（4アイテム並べるために20%に変更） */
+    width: 30%; /* 各アイテムの幅を設定（4アイテム並べるために20%に変更） */
+    padding: 30px;
     box-sizing: border-box; /* パディングやボーダーのサイズを含める */
     text-align: center;
     background: #fff;
@@ -82,6 +83,7 @@ h2 {
     margin: 0 15px; /* 写真同士のスペースを設定 */
 }
 
+
 .col-3:hover {
     transform: translateY(-10px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -89,13 +91,14 @@ h2 {
 
 .col-3 img {
     width: auto;
-    height: 7cm; /* 写真の高さを7センチに設定 */
+    height: auto; /* 写真の高さを7センチに設定 */
     object-fit: cover;
-    border-radius: 10px;
+    max-height: 7cm;
+    
 }
 
 .col-3 dt {
-    font-size: 1em;
+    font-size: 1.15em;
     font-weight: bold;
     color: #fff;
     background-color: #393939;

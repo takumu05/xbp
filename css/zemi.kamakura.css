@@ -17,50 +17,62 @@
   text-decoration: none; /* リンクの下線を消す */
 }
 
-/* 日付 カレンダー風 */
-.hyphen {
-	display: none;
+.date-with-subtitle {
+  display: flex;
+  align-items: center;       /* 日付と小見出しを上下中央揃え */
+  justify-content: flex-start;
+  gap: 12px;                 /* 日付と小見出しの間のスペース */
+  margin: 20px 0;            /* 周囲の余白調整 */
 }
-.date a {
-	text-decoration: none;
+
+.circle-date {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #8dd3fc;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;  
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+  padding: px 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  text-align: center;
 }
-.entry-header .date {
-	position: absolute;
-	top: 5px;
-	left: -90px;
-	width: 75px;
-	height: 60px;
-	padding: 0;
-	border: none;
-	border-radius: 4px;
-	background: url(https://cdn-ak.f.st-hatena.com/images/fotolife/s/syofuso/20170130/20170130143332.png?1485754436) repeat-x;
-	color: #47a89c;
-	text-align: center;
-	line-height: 20px;
-	font-family: 'Montserrat', Helvetica, Arial, sans-serif;
-	font-size: 12px;
-	box-shadow: 0 2px 3px rgba(0,0,0,0.15);
-	font-weight: normal;
+
+.month-day {
+  font-size: 30px;
+  margin-top: 10px;      /* 上部余白 */
+  margin-bottom: 2px; ; /* ↓ この余白を小さくする */
 }
-.date-year::after {
-	content: "-";
+
+.year {
+  font-size: 20px;
+  margin-top: 10px; /* 不要な余白をなくす */
 }
-.date-month::after {
-	content: none;
+
+.subtitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;     /* 左揃えに */
 }
-.date-year, .date-month {
-	display: inline;
-	color: #fff;
-	font-size: 12px;
-	font-weight: normal;
+
+.subtitle h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
 }
- .date-day {
-	display: block;
-	font-weight: bold;
-	font-size: 28px;
-	line-height: 40px;
-        color: #47a89c;
+
+.subtitle p {
+  margin: 4px 0 0;
+  font-size: 10px;
+  color: #666;
 }
+
+
+
 
 /* ベーススタイル */
 html, body {

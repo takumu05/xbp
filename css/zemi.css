@@ -238,8 +238,8 @@ h2 {
   transition: opacity 1s, transform 1s;
   margin: 20px 0;
   padding: 20px;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
   min-height: 200px;
 }
 
@@ -259,5 +259,32 @@ h2 {
   transform: translateX(0);
 }
 
+.image-container {
+  position: relative;
+  display: inline-block;
+}
 
+.image-container img {
+  display: block;
+  width: 100%; /* またはお好みのサイズ */
+  height: auto;
+}
+
+.text-overlay {
+  font-family: 'Playfair Display', serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(0, 0, 0);              /* 文字色 */
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 3em;
+  text-align: center;
+}
+.soft-rounded-photo {
+  width: 300px;            /* お好みでサイズ調整 */
+  opacity: 0.5;            /* ← 半透明にする（0〜1） */
+  border-radius: 20px;     /* ← 角を丸くする（px値で調整） */
+}
 

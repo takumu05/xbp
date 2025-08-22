@@ -21,7 +21,7 @@
   display: flex;
   align-items: center;       /* 日付と小見出しを上下中央揃え */
   justify-content: flex-start;
-  gap: 12px;                 /* 日付と小見出しの間のスペース */
+  gap: 100px;                 /* 日付と小見出しの間のスペース */
   margin: 20px 0;            /* 周囲の余白調整 */
 }
 
@@ -29,7 +29,7 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background-color: #8dd3fc;
+  background-color: #ffffff;
   color: white;
   display: flex;
   flex-direction: column;

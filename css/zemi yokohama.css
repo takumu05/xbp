@@ -208,15 +208,3 @@ progress {
     cursor: default
 }
 
-.logo {
-  height: 60px;
-  width: 60px; /* 正方形にする */
-  border-radius: 50%; /* 丸くする */
-  object-fit: cover;  /* 画像が潰れないように */
-}
-
-
-.logo-link {
-  display: inline-block;
-  text-decoration: none; /* リンクの下線を消す */
-}

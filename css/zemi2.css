@@ -15,6 +15,7 @@
 body{
     line-height: 1.7;
     color: var(--brack);
+    margin: 0;
 }
 a {
     text-decoration: none; 
@@ -23,8 +24,18 @@ p {
     font-family: "M PLUS 1p", sans-serif;
     font-weight: 550;
 }
+
 img{
     max-width: 100%;
+}
+
+.wrapper{
+    max-width: 1120px;
+    margin: auto;
+    padding: 0 1.5rem;
+}
+.align-center{
+    text-align: center;
 }
 .fadein{
     opacity: 0;
@@ -137,14 +148,7 @@ img{
     75% { background-image: url(../images/4.jpeg); }
 }
 /*タイトル*/
-#page-title {
-    position: sticky;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-}
+
 .title-inner {
     text-align: center;
     font-family: "WDXL Lubrifont JP N", sans-serif;
@@ -184,6 +188,7 @@ img{
     position: fixed;
     height: 30vh;
 }
+
 /*タイトル*/
 .activity-header {
     font-family: "WDXL Lubrifont JP N", sans-serif;
@@ -298,11 +303,15 @@ footer p{
     height: 13px;
 }
 #blog-title{
-    font-family: "WDXL Lubrifont JP N", sans-serif;
+    font-family: serif;
     font-size: 80px;
+    color: #ffffff;
     text-align: center;
     max-width: 1000px;
     margin: 20px auto 150px auto; 
+    border-width: thick;
+    border-style: solid;
+    border-color: #ffffff;
 }
 .blog {
     display: flex;
@@ -373,4 +382,84 @@ footer p{
     padding: 2rem 0;
     margin-top: 6rem;
     color: #ffffff;
+}
+.cover {
+    background-size: cover;
+    background-position: center bottom;
+    height: 800px;
+    border-radius: 20px;
+}
+.cover-home {
+    text-align: center;
+    background-image: url(../images/train-7040579_1280.jpg);
+    background-color: rgba(0,0,0,0.5); /* ← 半透明の黒を重ねる */
+    background-blend-mode: darken;
+    padding: .25rem 2rem;         /* 上下かなり薄く */
+    margin: 0;    
+    margin-left: 20px;
+    margin-right: 20px;     
+}
+.about {
+    margin: 4rem auto 0;
+}
+.align-center {
+    text-align: center;
+}
+.page-title{
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+    line-height: 1.4;
+    font-family: serif;
+    color: #ffffff;
+}
+.page-header{
+    display: flex;
+    justify-content: space-between; /* 左右に分ける */
+    align-items: center;           /* ← 高さを中央揃え */
+    padding: 0 2rem;
+    margin-top: 0;  
+    position: relative;
+    top: 0;
+}
+.logo{
+    height: 100px;   /* ← ナビの高さに近づける */
+    width: auto;    /* アスペクト比を保つ */
+    display: block;
+}
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+   margin: 0;
+   padding: 0;
+   list-style: none;
+}
+.main-nav a {
+    color: rgb(255, 255, 255);
+}
+.main-nav a:hover {
+    color: rgb(0, 0, 0);
+}
+@media (min-width: 800px){
+    /*見出し*/
+    .page-title {
+    font-size: 5rem;
+    border: 3px double #ffffff; /* 厚みを調整 */
+    padding: 0.5rem 1rem;      /* 内側余白を小さく */
+    display: inline-block;     /* 文字に沿った枠線にする */
+    margin: 1rem auto;         /* 上下だけ少し余白 */
+}
+    .heading-large {
+        font-size: 4rem;
+    }
+    /*ヘッダー*/
+    .page-header{
+        display: flex;
+        justify-content: space-between;
+        padding-top: .25rem;
+    }
+    .main-nav {
+        font-size: 1.5rem
+    }
 }
